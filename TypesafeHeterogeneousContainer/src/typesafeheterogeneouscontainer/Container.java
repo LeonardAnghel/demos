@@ -7,7 +7,7 @@ public final class Container {
     
     private final Map<String, Object> container = new HashMap<>();
 
-    public <T> void putObject(final String key, final T instance, final Class<T> type) {
+    public <T> void putInstance(final String key, final T instance, final Class<T> type) {
         
         if (type == null) {
             throw new NullPointerException("Type is null");
@@ -16,7 +16,7 @@ public final class Container {
         container.put(key, type.cast(instance));
     }  
 
-    public <T> T getObject(final String key, final Class<T> type) {       
+    public <T> T getInstance(final String key, final Class<T> type) {       
         return type.cast(container.get(key));
     }
     
