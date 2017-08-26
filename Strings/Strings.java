@@ -17,7 +17,7 @@ public final class Strings {
             throw new IllegalArgumentException(ILLEGAL_ARGUMENT_EXCEPTION_ERR_MSG);
         }
                 
-        StringBuilder resultOfConcat = new StringBuilder("");
+        StringBuilder resultOfConcat = new StringBuilder();
         
         for(T element: elements) {
             resultOfConcat.append(element);
