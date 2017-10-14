@@ -50,7 +50,7 @@ public class ErrorCollectorSample extends BaseErrorCollector {
         assertEquals(user.getAddress(), USER_ADDRESS);
         // fail
         assertEquals(user.getPhone(), "555-0909-533");
-        // Test will stop here
+        // Test will stop here, even if there are two more failures
         assertEquals(user.getZip(), "111-1111");
         assertEquals(user.getSsn(), USER_SSN);
         assertEquals(user.getAge(), 32);
