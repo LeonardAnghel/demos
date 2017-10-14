@@ -36,11 +36,14 @@ public class ErrorCollectorSample {
         equalsToCollector(user.getName(), USER_NAME);
         equalsToCollector(user.getSurname(), USER_SURNAME);
         equalsToCollector(user.getAddress(), USER_ADDRESS);
+        // fail
         equalsToCollector(user.getPhone(), "555-0909-533");
+        // fail
         equalsToCollector(user.getZip(), "111-1111");
         equalsToCollector(user.getSsn(), USER_SSN);
+        // fail
         equalsToCollector(user.getAge(), 32);
-        // Test reports all failures
+        // Test report all failures
     }
     
     @Test
@@ -48,6 +51,7 @@ public class ErrorCollectorSample {
         assertEquals(user.getName(), USER_NAME);
         assertEquals(user.getSurname(), USER_SURNAME);
         assertEquals(user.getAddress(), USER_ADDRESS);
+        // fail
         assertEquals(user.getPhone(), "555-0909-533");
         // Test will stop here
         assertEquals(user.getZip(), "111-1111");
