@@ -15,6 +15,7 @@ public class Agood {
         properties.put("password", "Password");        
         
         PROPERTIES  = Collections.unmodifiableMap(properties);
+        properties = null;
     }
 
     public static Map<String, String> getPROPERTIES() {
