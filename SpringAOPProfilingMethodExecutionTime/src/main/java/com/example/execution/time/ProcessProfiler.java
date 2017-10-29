@@ -1,5 +1,6 @@
 package com.example.execution.time;
 
+import java.util.concurrent.TimeUnit;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
@@ -17,14 +18,15 @@ public class ProcessProfiler {
     @Around("processMethods()")
     public Object profile(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
         
-        long start = System.currentTimeMillis();        
+        long start = System.nanoTime();        
         System.out.println("Going to call the method.");
         
         Object output = proceedingJoinPoint.proceed();        
         System.out.println("Method execution completed.");
         
-        long elapsedTime = System.currentTimeMillis() - start;
-        System.out.println("Method execution time: " + elapsedTime + " milliseconds.");
+        long elapsedNanoTime = System.nanoTime() - start;
+        System.out.println("Method execution time: "
+                + TimeUnit.MILLISECONDS.convert(elapsedNanoTime, TimeUnit.NANOSECONDS) + " milliseconds.");
         
         return output;
     }
